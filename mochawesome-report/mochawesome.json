@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-20T22:44:48.226Z",
+    "end": "2022-03-20T22:45:07.359Z",
+    "duration": 19133,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "68e3cccc-76c0-43db-a048-b730e439db94",
+      "title": "",
+      "fullFile": "C:\\workspace\\MEChallenge\\test\\Login.js",
+      "file": "\\test\\Login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9d4d5154-7b92-45be-88b2-869a01ee94e4",
+          "title": "Login test",
+          "fullFile": "C:\\workspace\\MEChallenge\\test\\Login.js",
+          "file": "\\test\\Login.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login com sucesso",
+              "fullTitle": "Login test Login com sucesso",
+              "timedOut": false,
+              "duration": 6597,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//abrir browser\n\n    let driver = await new Builder().forBrowser(\"chrome\").build();\n    await driver.get(\"http://automationpractice.com/index.php?controller=authentication&back=my-account\");\n    // adicionar valores no login\n    await driver.findElement(By.id(\"email\")).sendKeys(\"teste_isabelle@teste.com\");\n    await driver.findElement(By.id(\"passwd\")).sendKeys(\"teste\");\n    \n    // enviar valores\n    \n    await driver.findElement(By.id(\"SubmitLogin\")).click();\n    \n    // asserção\n    const msg = await driver.findElement(By.className(\"info-account\")).getText().then(function(value){\n        return value\n    });\n    \n    assert.strictEqual(msg, \"Welcome to your account. Here you can manage all of your personal information and orders.\");\n    // fechar browser\n    await driver.quit();",
+              "err": {},
+              "uuid": "0205cd73-f7b4-4878-93b5-64b8dfd2f6ad",
+              "parentUUID": "9d4d5154-7b92-45be-88b2-869a01ee94e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login em branco",
+              "fullTitle": "Login test Login em branco",
+              "timedOut": false,
+              "duration": 6058,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//abrir browser\n\n    let driver = await new Builder().forBrowser(\"chrome\").build();\n    await driver.get(\"http://automationpractice.com/index.php?controller=authentication&back=my-account\");\n        \n    // enviar login\n    \n    await driver.findElement(By.id(\"SubmitLogin\")).click();\n    \n    // asserção\n    const msg = await driver.findElement(By.className(\"alert alert-danger\")).getText().then(function(value){\n        return value\n    });\n    \n    assert.strictEqual(msg, \"There is 1 error\\nAn email address required.\");\n    // fechar browser\n    await driver.quit();",
+              "err": {},
+              "uuid": "ce876f09-26ee-4a23-81b4-f90f15733f90",
+              "parentUUID": "9d4d5154-7b92-45be-88b2-869a01ee94e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login inválido",
+              "fullTitle": "Login test Login inválido",
+              "timedOut": false,
+              "duration": 6412,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//abrir browser\n\n    let driver = await new Builder().forBrowser(\"chrome\").build();\n    await driver.get(\"http://automationpractice.com/index.php?controller=authentication&back=my-account\");\n    // adicionar valores no login\n    await driver.findElement(By.id(\"email\")).sendKeys(\"teste_isabelle\");\n    await driver.findElement(By.id(\"passwd\")).sendKeys(\"teste\");\n    \n    // enviar valores\n    \n    await driver.findElement(By.id(\"SubmitLogin\")).click();\n    \n    // asserção\n    const msg = await driver.findElement(By.className(\"alert alert-danger\")).getText().then(function(value){\n        return value\n    });\n    \n    assert.strictEqual(msg, \"There is 1 error\\nInvalid email address.\");\n    // fechar browser\n    await driver.quit();",
+              "err": {},
+              "uuid": "269c2756-85d0-4412-bede-19d402fb342d",
+              "parentUUID": "9d4d5154-7b92-45be-88b2-869a01ee94e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0205cd73-f7b4-4878-93b5-64b8dfd2f6ad",
+            "ce876f09-26ee-4a23-81b4-f90f15733f90",
+            "269c2756-85d0-4412-bede-19d402fb342d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19067,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.1.1"
+    }
+  }
+}

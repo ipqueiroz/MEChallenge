@@ -1,0 +1,17 @@
+{
+  "name": "mechallenge",
+  "version": "1.0.0",
+  "description": "Me Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --no-timeouts --reporter mochawesome"
+  },
+  "author": "Isabelle Queiroz",
+  "license": "MIT",
+  "dependencies": {
+    "chromedriver": "^99.0.0",
+    "mocha": "^9.2.2",
+    "mochawesome": "^7.1.2",
+    "selenium-webdriver": "^4.1.1"
+  }
+}
